@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+
+    <!-- <p class="t">
+    DEN KÆMPE OPGAVE SKAL DELES OP I EN MASSE MINDRE! 
+    [1], [2-4], [5], [6-8], [9-11]
+    Ved 5, 6, 7, 8 skal de ikke <i>både</i> finde
+    f.eks. _(Cos_) og _(Sin_) eller både _(Tan_) og _(Cot_): 
+    Bare skriv hvordan du let kan få den éne når du har den anden i 
+    beskrivelsen. Omformuler også alle opgaver i [6-8]
+    så de ikke faktisk behøver at finde f.eks. _(Tan(x)^12_).
+    Sig i stedet at de skal finde et "lignende trick der
+    kan bruges til lige potenser af _(Tan_)" (osv.)
+    </p> -->
+
+    <h4>Træning i integration af trig-funktioner</h4>
+    
+    <p class="t">
+    Du har nok lagt mærke til, at vi relativt ofte støder på integraler med produkter og
+    potenser af trigonometriske funktioner. 
+    En trig-substitution vil stort set altid give os en integral med trigonometriske funktioner, så
+    det er vigtigt at øve os i disse tilfælde. 
+    </p>
+
+    <p class="cent">*</p>
+
+    <p class="t" style="margin-bottom:50px;">
+     De er altid lette at løse <i>hvis</i> _(Sin(x)_) eller _(Cos(x)_) har 
+    en potens på _(1_). F.eks:
+    _($\int Cos(x)^{-482.93}*Sin(x) \text{ }dx _)
+    Her substitueres bare _(Cos(x)=u_), hvilket giver:
+    _($\int \frac{u^{-482.93}*Sin(x)}{Sin(x)} \text{ }du = \int u^{-482.93} \text{ }du = \frac{u^{-481.93}}{-481.93}_)
+    </p>
+
+    <q-stion 1="23" 2="1">
+    Regn integralet af:
+    _($Tan(x)^{-273.56}*Sec(x)^2_)
+    <br></q-stion>
+    <answer-box>
+    Det her svarer lidt til situationen, hvor potensen på enten _(Cos_) eller _(Sin_) er _(1_). 
+    Hældningen på _(Tan_) er nemlig _(Sec(x)^2_), så hvis vi siger _(u=Tan(x)_)  
+    forsvinder _(Sec(x)^2_), og vi får:
+    _($\int u^{-273.56} \, du = \frac{Tan(x)^{-272.56}}{-272.56}_)
+    Bum! 
+    <br><br></answer-box>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Det kan hjælpe massivt at gøre brug af dobbelt-vinkel formlerne når du løser disse
+    slags integraler. 
+    _($\begin{eqnarray}
+    && Cos(2x) = \, 2 Cos(x)^2 - 1 = 1 - 2 Sin(x)^2 \\ \\
+    && Sin(2x) = \, 2 Sin(x) Cos(x)
+    \end{eqnarray}_)
+    Cosinus' egenskab kan 
+    reducere en potens på _(2_) på enten _(Sin_) eller
+    _(Cos_) til en potens på _(1_). Sinus' egenskab 
+    kan bruges til at omskrive f.eks. _(Cos(x)^{4}*Sin(x)^{4}_) til bare
+    _((1/2^4) Sin(2x)^4_), hvilke igen reducere den samlede potens. 
+    </p>
+    <p class="t">
+    Halv-vinkel formlerne kommer også sommetider i brug:
+    _($Sin(x) = \pm \sqrt{\frac{1-Cos(2\theta)}{2}} \qquad Cos(x) = \pm \sqrt{\frac{1+Cos(2\theta)}{2}}  _)
+    Her skal du bare passe på, da vi får et _(\pm_)-tegn i spil. Det kan kun fjernes
+    hvis det opløftes til en lige potens (eftersom det <i>altid</i> er positivt)
+    </p>
+    <p class="t">
+    De forskellige 
+    _($\begin{eqnarray}
+    && 1 - Cos(x)^2 & = Sin(x)^2 \\ \\
+    && 1 - Sin(x)^2 & = Cos(x)^2 \\ \\
+    && 1 + Tan(x)^2 & = Sec(x)^2 \\ \\
+    && Sec(x)^2 - 1 & = Tan(x)^2 
+    \end{eqnarray}_)
+    ... er også alle meget brugbare. 
+    </p>
+
+    <q-stion 1="23" 2="2">
+    Regn integralet på de følgende funktioner:
+    <div style="margin-left:-76%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(x)^2  \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Sec(x)^2  \\  \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Tan(x)^2  \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(175,128,161)">
+    Her bruger vi cosinus' dobbelt-formel og omskriver til:
+    _($\int \frac{1-Cos(2x)}{2} \, dx = \frac{1}{4} \int 1 - Cos(u) \, du = \frac{2x-Sin(2x)}{4} _)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(171,96,147)">
+    Hældningen af _(Tan_) er _(Sec(x)^2_). Det er bare en af de ting man skal huske. Så:
+    _($\int Sec(x)^2 \, dx = Tan(x)_)
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(175,128,161)">
+    Jeg tænker at vi kan omskrive til:
+    _($\int Sec(x)^2 - 1 \, dx = \int Sec(x)^2 \, dx - \int 1 \, dx = Tan(x) - x_)
+    Voila!
+    <br><br></answer-box>
+
+    <p class="cent">*</p>
+
+    <p class="t">
+    Integraler der involverer trig-funktioner kan opdeles i 
+    en masse forskellige tilfælde og cases, men hvad der gælder
+    for dem alle er, at de enten er <i>ret nemme</i> eller <i>meget langsomme og store</i>:
+    Intet midt imellem. Mange er nemme <i>trods</i> potenserne er høje.
+    </p>
+    <p class="t">
+    De "ikke-nemme" har jeg valgt at kalde "langsomme og store" i stedet for "svære". 
+    Det er fordi de ikke som sådan er <i>svære</i>:
+    De involverer bare at følge og gennemgå en lang og slavisk proces, 
+    der ofte giver gigantiske svar. Denne proces
+    bliver eksponentielt meget sværere med højere potenser, hvor 
+    de "lette tilfælde" kun bliver <i>lidt</i> sværere når potenserne stiger. 
+    </p>
+    <p class="t">
+    I de følgende opgaver ser vi på nogle af de "lette" tilfælde:
+    </p>
+
+    <q-stion 1="23" 2="3">
+    Regn integralet af:
+    _($Cos(x)^{13}_)
+     <br></q-stion>
+    <answer-box>
+    Nu bliver potenserne pludselig store. Vi ved, at integralet er let hvis enten _(Cos_)
+    eller _(Sin_) har en potens på _(1_). Kan vi på nogen smart måde udnytte det? Jeg tænker
+    måske vi kan omskrive til:
+    _($Cos(x)*Cos(x)^{12} = Cos(x)*(1-Sin(x)^2)^6_)
+    Bum! Nu kan jeg bare sige _(u=Sin(x)_), hvilke fjerner _(Cos_) og giver os:
+    _($\int (1-u^2)^{6} \, du_)
+    Vi er desværre nødt til manuelt at udvide denne parentes, men det er nemt og tager ikke super lang tid:
+    _($\begin{eqnarray}
+    && \VeC[6,0]*1 \,  \, - \\  
+    && \VeC[6,1]*u^2 \,  \, + \\
+    && \VeC[6,2]*u^4 \,  \, - \\  
+    && \VeC[6,3]*u^6 \,  \, + \\
+    && \VeC[6,4]*u^8 \,  \, - \\  
+    && \VeC[6,5]*u^{10} \, \,  + \\
+    && \VeC[6,6]*u^{12} 
+    \end{eqnarray}_)
+    Så:
+    _($\begin{eqnarray}
+    && \int 1 - 6u^2 + 15u^4 - 20u^6 + 15u^8 - 6u^{10} + u^{12} \, du = \\ \\
+    && u - \frac{6u^3}{3} + \frac{15u^5}{5} - \frac{20u^7}{7} + \frac{15u^9}{9} - \frac{6u^{11}}{11} + \frac{u^{13}}{13}
+    \end{eqnarray}_)
+    Herfra kan man substituere _(u=Sin(x)_) og få svaret. Ved _(Sin(x)^{13}_) får
+    man præcist samme resultat, bare negativt og med _(u=Cos(x)_) i stedet. 
+    <p class="cent">*</p>
+    <p class="t">
+    Dette trick virker kun med ulige potenser. Lige potenser er en af de "lange og trælse" cases.  
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="4">
+    I sidste opgave fandt vi et dejligt og generaliserbart trick til 
+    ulige potenser af _(Cos_) og _(Sin_). Find et par lignende tricks til:
+    _($\begin{eqnarray} 
+    && \underline{\textbf{A:}} \, \, \, \text{Lige potenser af } Sec \\ \\
+    && \underline{\textbf{B:}} \, \, \, \text{Ulige potenser af } Tan \\ \\
+    && \underline{\textbf{C:}} \, \, \, \text{Lige potenser af } Tan 
+    \end{eqnarray}_)
+    Du behøver ikke faktisk regne det fulde integral på en stor potens som
+    _(13_) eller _(12_). Bare find det trick du kan se virker. 
+    <p class="t">
+    De tricks du finder, vil også virke ved henholdsvis _(Cot_) og _(Csc_). 
+    _(Tan_) og _(Cot_) er "par" lidt ligesom _(Cos_) og _(Sin_), og samme gælder
+    _(Sec_) og _(Csc_). Herfra kommer "Co" i navnene:
+    Sin og Co-sin, Tan og og Co-tan, Secant og Co-secant. 
+    </p>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(175,128,161)">
+    Her omskriver jeg bare til:
+    _($Sec(x)^2*Sec(x)^{10} = Sec(x)^2*(Tan(x)^2+1)^5_)
+    Nu kan jeg substituere _(Tan(x)=u_), hvilket fjerner _(Sec(x)^2_) og giver:
+    _($\begin{eqnarray}
+    && \int (u^2 +1)^5 \, du = \\ \\
+    && \int 1 + 5u^2 + 10u^4 + 10u^6 + 5u^8 + u^{10} \, du = \\ \\
+    && Tan(x) + \frac{5 Tan(x)^3}{3} + \frac{10 Tan(x)^{5}}{5} + \frac{10 Tan(x)^7}{6} + \frac{5 Tan(x)^{9}}{9} + \frac{Tan(x)^{10}}{10}
+    \end{eqnarray}_)
+    Præcis det samme gælder _(Csc_). You know the drift: Negativt, og _(Tan_) er erstattet med _(Cot_). 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(171,96,147)">
+    Lad os tage _(Tan(x)^11_) som eksempel. Vi kan omskrive det meget ligesom
+    før til:
+    _($Tan(x)*\left(Sec(x)^2-1 \right)^5_)
+    Herfra <i>kunne</i> vi substituere _(Sec(x)=u_), dividere
+    med hældningen af _(Sec(x)_), som er _(Sec(x)*Tan(x)_), og få:
+    _($\frac{Tan(x)*\left(Sec(x)^2-1 \right)^5}{Sec(x)*Tan(x)} = \frac{(u^2-1)^5}{u}_)
+    Det er fint nok. _((u^2-1)^5_) kan udvides præcis ligesom før, 
+    hvorefter vi til sidst dividerer med _(u_), ved at minusse hver potens med _(1_). 
+    Der findes også en bedre strategi dog:
+    <p class="t">
+    Hvad hvis vi i stedet substituerer _(u=Sec(x)^2-1_)? Ledet med
+    _(-1_) forsvinder helt, og hældningen af _(Sec(x)^2_) er
+    _(2*Sec(x)*Sec(x)*Tan(x)_), hvilket er genialt: Ikke bare bliver
+    _(Tan_) fjernet ligesom før, men resten _(Sec(x)^2_) kan nemt beskrives af _(u_)
+    som _(u+1_)! Vi får:
+    _($\frac{u^5}{u+1}_)
+    Det her er meget dejligere! Det kan snildt udvides via long division til:
+    _($u^4 - u^3 + u^2 - u + 1 - Ln(u+1)_)
+    Og det kan nemt integreres. Til sidst substitueres
+    _(u=Sec(x)^2-1_), som bare svarer til _(u=Tan(x)^2_). Bum!
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(175,128,161)">
+    Jeg viser processen ved hjælp af _(Tan(x)^{12}_) som eksempel i følgende video:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\CosSinEasyCasesVideo2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="5">
+    Lad os nu prøve et par opgaver hvor _(Sin_) og _(Cos_) eller
+    _(Tan_) og _(Sec_) er blandet. Find integralet af de følgende funktioner:
+    <div style="margin-left:-63%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, Sin(x)^{7}*Cos(x)^4 \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, Sin(x)^{9}*Cos(x)^{5} \\ \\
+        && \underline{\textbf{C}}: \, \, \, \, \, \, Tan(x)^{8}*Sec(x)^{6} 
+    \end{eqnarray}_)
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Min ide er at omskrive det så vi
+    får enten en _(Cos_) eller _(Sin_) med potens på _(1_). 
+    Jeg siger:
+    _($Sin(x)*Sin(x)^{6}*Cos(x)^{4} = Sin(x)*(1-Cos(x)^2)^3*Cos(x)^2_)
+    Bum! Nu kan vi substituere _(u=Cos(x)_), fjerne _(Sin_) og få:
+    _($\begin{eqnarray}
+    && \int (1-u^2)^3*u^2 \, du = \\ \\
+    && \int (1 - 3u^2 + 3u^4 - u^6)*u^2 \, du = \\ \\
+    && \frac{u^3}{3} - \frac{3u^{5}}{4} + \frac{3u^{7}}{7} - \frac{u^{9}}{9} \, du = \\ \\
+    \end{eqnarray}_)
+    Vi kan bare substituere _(u=Cos(x)_) og få svaret. 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Begge er ulige denne gang, men præcis samme strategi virker. Vi kan omskrive til:
+    _($Cos(x)*(1-Sin(x)^2)^2*Sin(x)^9_)
+    Så substituerer vi _(Sin(x)=u_), fjerner _(Cos(x)_) og får:
+    _($\begin{eqnarray}
+    && \int (1-u^2)^2*u^9 \, du = \\ \\
+    && \int u^9 - 2u^{11} + u^{13} \, du = \\ \\
+    && \frac{Sin(x)^{10}}{10} - \frac{2 Sin(x)^{12}}{12} + \frac{Sin(x)^{14}}{14}
+    \end{eqnarray}_)
+    Bum! 
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{C}}_)#" tabColour="rgb(171,96,147)">
+    Business as usual. Vi omskriver til:
+    _($Tan(x)^8*(Tan(x)^2 + 1)^2*Sec(x)^2_)
+    Substituerer _(u=Tan(x)_), hvilke fjerner _(Sec(x)^2_) og giver:
+    _($\begin{eqnarray}
+    && \int u^8 (u^2+1)^2 \, du = \\ \\
+    && \int u^8 + 2u^{10} + u^{12} \, du = \\ \\ 
+    && \frac{Tan(x)^9}{9} + \frac{2 Tan(x)^{11}}{11} + \frac{Tan(x)^{13}}{13}
+    \end{eqnarray}_)
+    Voila!
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="6">
+    Find integralerne til:
+    <div style="margin-left:-61%; margin-top:25px; margin-bottom: 0px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \frac{1}{Cos(x)^6 Sin(x)^{4}} \\ \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \frac{1}{Cos(x)^5*Sin(x)^{7}} 
+    \end{eqnarray}_)
+    </div>
+    <p class="t">
+    Dem her ville jeg også klassificere som "lette", 
+    men pas på: Vi kan ikke bruge samme trick som i de andre opgaver, da 
+    alting allerede er i nævneren. Der er intet vi kan "fjerne"
+    ved at dividere. Vi skal bruge et andet trick. 
+    </p>
+    <p class="t">
+    Det er et lidt svært trick der involverer en smart substitution! 
+    </p>
+    <br></q-stion>
+    <answer-box t="h">
+    Kan du på nogen smart måde udnytte:
+    _($Sin(x) = \frac{Tan(x)}{\pm \sqrt{Tan(x)^2+1}}, \qquad Cos(x) =  \frac{1}{\pm \sqrt{Tan(x)^2+1}} _)
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(171,96,147)">
+    Min ide er lidt fjollet, men den virker: Hvad hvis vi bruger
+    _($Sin(x) = \frac{Tan(x)}{\sqrt{Tan(x)^2+1}}, \qquad Cos(x) = \frac{1}{\sqrt{Tan(x)^2+1}} _)
+    ... til at omskrive både _(Sin_) og _(Cos_) i forhold til _(Tan_). Så
+    kan vi substituere _(x=Arctan(u)_), hvilket vil fjerne alle trigonometriske funktioner!
+    Hældningen af _(Arctan(u)_) er _(1/(1+u^2)_), hvilke ikke burde være noget kæmpe problem. 
+    <p class="t">
+    Vi omskriver og får
+    _($\frac{(\sqrt{Tan(x)^2+1})^6*(\sqrt{Tan(x)^2+1})^{4}}{Tan(x)^{4}} = \frac{(Tan(x)^2+1)^{5}}{Tan(x)^{4}}_)
+    Nu substituerer vi _(x=Arctan(u)_), hvilket giver: 
+    _($\begin{eqnarray}
+    && \int \frac{(u^2+1)^{5}}{u^{4}}*\frac{1}{u^2+1} \, du = \\ \\
+    && \int (u^2+1)^4 * u^{-4} \, du = \\ \\
+    && \int u^{-4} + 3 u^{-2} + 6 + 3 u^{2} + u^{4} = \\ \\
+    && \frac{Tan(x)^{-3}}{-3} + \frac{3 Tan(x)^{-1}}{-1} + 6 Tan(x) + \frac{3 Tan(x)^{3}}{3} + \frac{Tan(x)^{5}}{5} 
+    \end{eqnarray}_)
+    Boom! Genialt! 
+    </p>
+    <br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(175,128,161)">
+    Tricket virker igen. Vi kan omskrive til:
+    _($\begin{eqnarray}
+    && \frac{(\sqrt{Tan(x)^2+1})^5*(\sqrt{Tan(x)^2+1})^{7}}{Tan(x)^{7}} = \\ \\
+    && \frac{\sqrt{Tan(x)^2+1}^{5+7}  }{Tan(x)^{7}} = \\ \\
+    && \frac{(Tan(x)^2+1)^{6}}{Tan(x)^{7}}
+    \end{eqnarray}_)
+    Nu laver vi substitutionen og får:
+    _($\begin{eqnarray}
+    && \int \frac{(u^2+1)^{5}}{u^7} \, du = \\ \\ 
+    && \int u^{-7} + 5u^{-5} + 10u^{-3} + 10u^{-1} + 5u + u^{3} \, du = \\ \\
+    && \frac{Tan(x)^{-6}}{-6} + \frac{5 Tan(x)^{-4}}{-4} + \frac{10 Tan(x)^{-2}}{-2} + 10 Ln(Tan(x)) \, + \\ \\ && \frac{5 Tan(x)^{2}}{2} + \frac{Tan(x)^{4}}{4} 
+    \end{eqnarray}_)
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Stort set alle disse
+    tilfælde involverede at sætte _(u_) til en af de relevante trigonometriske funktioner efter en lille omskrivning. 
+    Målet i alle var
+    at få et polynomie der kunne integreres. 
+    </p>
+
+    <p class="t">
+    De nemme tilfælde kan relativt kompakt og let beskrives som: 
+    _($\begin{eqnarray}
+    && Sin(x)^m \text{ og } Cos(x)^m : \text{ Nem hvis } m \text{ er ulige} \\
+    && Sec(x)^m \text{ og } Csc(x)^m : \text{ Nem hvis } m \text{ er lige} \\
+    && Tan(x)^m \text{ og } Cot(x)^m : \text{ Nem på alle } m \text{ } \\
+    && \\
+    && Sin(x)^n*Cos(x)^m :  \text{ Nem så længe de ikke begge er lige} \\ 
+    && Sec(x)^n*Csc(x)^m :  \text{ Nem så længe de enten begge er lige eller begge ulige} \\
+    && \\
+    && Tan(x)^n*Sec(x)^m \text{ og } Cot(x)^n*Csc(x)^m :  \text{ Nem så længe } n \text{ ikke er lige imens } m \text{ er ulige} \\
+    && Tan(x)^n*Cos(m)^m \text{ og } Cot(x)^n*Sin(m)^m :  \text{ Kun nem hvis  } n \text{ er ulige}
+    \end{eqnarray}_)
+    ... hvor vi antager at alle _(n_) og _(m_) er hele og positive. 
+    </p> 
+    <p class="t">
+    Det er måske lidt forvirrende beskrevet, men de fire sidste cases dækker generelt:
+    _($\frac{Sin(x)^n}{Cos(x)^m} \text{ og } \frac{Cos(x)^n}{Sin(x)^m} _)
+    _(Tan(x)^n*Sec(x)^m_) er hvis _(Cos_) har højere potens end _(Sin_) i _(Sin/Cos_), 
+    _(Cot(x)^n*Csc(x)^m_) er hvis _(Sin_) har højere potens end _(Cos_) i _(Cos/Sin_). 
+    De to sidste cases, er de tilfælde hvor henholdsvis _(Cos_) og _(Sin_) har <i>lavere</i> potenser. 
+    </p>
+    <p class="t">
+    Lad os nu (relativt kort) se på et par 
+    af de svære tilfælde.
+    Mange af dem er for svære at løse lige nu, 
+    da de kræver et par teknikker vi først lærer på næste side. 
+    Det koger primært ned til, at vi tit støder på ulige potenser af 
+    _(Sec_), som er forfærdelige at integrere. 
+    </p>
+
+    <q-stion 1="23" 2="7">
+    Regn følgende integral:
+    _($\int Cos(x)^6 \, dx_)
+    <br></q-stion>
+    <answer-box>
+    Jeg tænker vi bruger cosinus' dobbelt-vinkel formel og omskriver som:
+    _($(Cos(x)^2)^3 = \frac{1}{2^3} \left(Cos(2x)+1 \right)^3_)
+    Nu udvider vi potensen, substituerer _(2x=u_) og får:
+    _($\frac{1}{2^4} \int 1+ 3 Cos(u) + 3 Cos(u)^2 + Cos(u)^3 \, du    _)
+    Integralet af _(1_) og _(3 Cos(u)_) er henholdsvis 
+    _(u_) og _(3 Sin(u)_). Ved _(3Cos(u)^2_) er vi nødt til at omskrive igen:
+    _($\int 3 Cos(u)^2 \, du = \frac{3}{2} \int Cos(2u)+1 \, du = \frac{3u}{2} + \frac{3 Sin(2u)}{4} _)
+    _(Cos(u)^3_) er et "nemt" tilfælde. Med lidt arbejde kan man regne det til:
+    _($Sin(u) - \frac{Sin(u)^3}{3}_)
+    Det hele plusses nu sammen:
+    _($\frac{1}{2^4}*\left(u+3 Sin(u) + \frac{3}{2}u + \frac{3}{4} Sin(2u) + Sin(u) - \frac{1}{3} Sin(u)^3 \right)  _)
+    Hvis man simplificer fås:
+    _($\frac{1}{2^4} \left(\frac{5}{2}u + 4 Sin(u) + \frac{3}{4} Sin(2u) - \frac{1}{3} Sin(u)^3 \right)_)
+    Til sidst substituerer vi _(u=2x_) og får:
+    _($\frac{1}{2^4} \left(5x + 4 Sin(2x) + \frac{3}{4} Sin(4x) - \frac{1}{3} Sin(2x)^3 \right)_)
+    Lovely. 
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="23" 2="8">
+    Regn:
+    _($\int Cos(x)^4*Sin(x)^2 \, dx_)
+    <br></q-stion>
+    <answer-box>
+    Der er flere måder man kan gå til dette. Èn er at 
+    omskrive _(Sin(x)^2_) til _(1-Cos(x)^2_), hvilke giver:
+    _($\int Cos(x)^4 \, dx - \int Cos(x)^6 \, dx_)
+    _(\int Cos(x)^6_) kender vi fra før, og _(Cos(x)^4_) kan vi så finde.
+    <p class="t">
+    En anden mulig strategi er at anvende sinus' dobbeltvinkel formel. 
+    Man kan omskrive til:
+    _($\frac{1}{2^2} \int Sin(2x)^2 Cos(x)^2_)
+    _(Sin_) og _(Cos_) har nu to forskellige inputs. _(Cos_) burde
+    helst have det samme som _(Sin_), så lad os omskrive _(Cos(x)_) i 
+    forhold til _(Cos(2x)_) via cosinus' halvvinkel formel: 
+    _($Cos(x) = \pm \sqrt{\frac{1+Cos(2x)}{2}}_)
+    Plus-minus og kvadratrodstegnet er intet problem siden de forsvinder, 
+    da _(Cos(x)_) er opløftet i anden potens. Vi får:
+    _($\frac{1}{2^3} \int Sin(2x)^2*(1+Cos(2x))_)
+    Vi substituerer lige _(u=2x_), og omskriver til:
+    _($\frac{1}{2^4} \left(\int Sin(u)^2 \, du + \int Sin(u)^2 Cos(x) \, du \right)_)
+    Løsningen på _(\int Sin(u)^2 Cos(x)_) er bare _(Sin(u)^3 / 3_). 
+    _(\int Sin(u)^2_) har vi løst før. Alt i alt får vi:
+    _($\frac{1}{2^4} \left(\frac{u}{2} + \frac{Sin(u)^3}{3} - \frac{Sin(u) Cos(u)}{2} \right)_)
+    Vi kan så substituere _(u=2x_) og få vores svar. 
+    </p>
+    <br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Lad os slutte af med et par trig-substitutionsopgaver før vi går videre til partial integration. 
+    </p>
+
+    <q-stion 1="23" 2="9">
+    Løs de følgende integraler:
+    <div style="margin-left:-71%; margin-top:25px; margin-bottom: -10px;">
+    _($\begin{eqnarray}
+        && \underline{\textbf{A}}: \, \, \, \, \, \, \sqrt{e^{8x}-1} \\  \\
+        && \underline{\textbf{B}}: \, \, \, \, \, \, \sqrt{x^5-x^6} \\  \\
+    \end{eqnarray}_)
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer _(\underline{\textbf{A}}_)#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\MiscTrig11.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer _(\underline{\textbf{B}}_)#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 4 1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <!-- <answer-box t="Answer 3#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 4 2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box> -->
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Regn de følgende integraler:
+    _($\begin{eqnarray}
+    && \textbf{1:} \, \, \, \, & Cos(x)^6 \\ \\
+    && \textbf{2:} \, \, \, \, & Sec(x)^5 \\ \\
+    && \textbf{3:} \, \, \, \, & Cos(x)^4*Sin(x)^2  \\ \\
+    && \textbf{4:} \, \, \, \, & Tan(x)^2*Sec(x)^3 \\ \\
+    && \textbf{5:} \, \, \, \, & \frac{Sin(x)^6}{Cos(x)^4} \\ \\
+    && \textbf{6:} \, \, \, \, & Sec(x)^4*Csc(x)^3 
+    \end{eqnarray}_)
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Jeg tænker vi bruger cosinus' dobbelt-vinkel formel til at omskrive som:
+    _($(Cos(x)^2)^3 = \frac{1}{2^3} \left(Cos(2x)+1 \right)^3_)
+    Nu udvider vi potensen, substituerer _(2x=u_) og får:
+    _($\frac{1}{2^4} \int 1+ 3 Cos(u) + 3 Cos(u)^2 + Cos(u)^3 \, du    _)
+    Integralet af _(1_) og _(3 Cos(u)_) er henholdsvis 
+    _(u_) og _(3 Sin(u)_). Ved _(3Cos(u)^2_) er vi nødt til at omskrive igen:
+    _($\int 3 Cos(u)^2 \, du = \frac{3}{2} \int Cos(2u)+1 \, du = \frac{3u}{2} + \frac{3 Sin(2u)}{4} _)
+    _(Cos(u)^3_) er et "nemt" tilfælde. Med lidt arbejde kan man regne det til:
+    _($Sin(u) - \frac{Sin(u)^3}{3}_)
+    Så alt i alt får vi:
+    _($\frac{1}{2^4} \left(2x + 3 Sin(2x) + \frac{3 Sin(4x)}{4} + Sin(2x) - \frac{Sin(2x)^3}{3} \right)_)
+    Lovely. 
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    s
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    s
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    s
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    s
+    <br><br></answer-box>
+    <answer-box t="Answer 6#" tabColour="rgb(175,128,161)">
+    s
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+ 
+
+
+    
+
+
+    
+    <!-- 
+    <q-stion 1="2" 2="1" 3="5">
+    Som du nok har set, så støder vi relativt ofte på integraler med 
+    trigonometriske funktioner. Hvis enten _(Sin(x)_) eller _(Cos(x)_) har
+    en potens på _(1_), så er det super nemt at løse. F.eks:
+    _($\int Cos(x)^{-482.93}*Sin(x) \text{ }dx \to_)
+    Her kan vi nu bare substituere _(Cos(x)=u_), så vi skal dividere
+    med _(-Sin(x)_), hvilket giver:
+    _($\int \frac{u^{-482.93}*Sin(x)}{Sin(x)} \text{ }du =_)
+    _($\int u^{-482.93} \text{ }du_)
+    Hvilke så er super nemt at løse. Hvis det her ikke er tilfældet dog, så
+    begynder det hurtigt at blive mere udfordrende som potenserne bliver større. Det
+    skal vi derfor øve. Løs følgende integraler: 
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(Cos(x)^2_)</li>
+            <li><b> 2</b>: _(Cos(x)^{13}_)</li>
+            <li><b> 3</b>: _(Cos(x)^6_)</li>
+            <li><b> 4</b>: _(Tan(m)^{11}_)</li>
+            <li><b> 5</b>: _(Tan(m)^{12}_)</li>
+            <li><b> 6</b>: _(Sec(m)^{12}_)</li>
+            <li><b> 7</b>: _(Cos(x)^{13}*Sin(x)^{13}_)</li>
+            <li><b> 8</b>: _(Cos(x)^{11}*Sin(x)^{13}_)</li>
+            <li><b> 9</b>: _(Cos(x)^{-482.93}*Sin(x)^3_)</li>
+        </ul>
+    </div>
+    Mange af de her integraler vil være relativt lange, og nogle af dem også relativt repetetive/gentagende. 
+    I nogen af dem skal du (måske) udvide nogle relativt store potenser, hvis der ikke
+    er flere "smarte tricks" du kan bruge. 
+    <p class="t">
+    Som et par hint, så skal jeg minde dig om at du kan omskrive både _(Cos(x)^2_) og _(Sin(x)^2_)
+    i forhold til _(Cos(2x)_), siden du kan isolere _(Cos(x)^2_) i _(Cos(2x)=2Cos(x)^2-1_) og
+    _(Sin(x)^2_) i _(Cos(2x)=1-2*Sin(x)^2_). Sinus' egenskab _(Sin(2x)=2 Sin(x) Cos(x) _)
+    kan også i nogle situationer være meget brugbar. Husk også formlerne for halve vinkler,
+    som du f.eks kan bruge til at beskrive _(Cos(x)_) i forhold til _(Cos(2x)_). 
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 3 1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 3 2.mp4' type='video/mp4'>
+    </video>
+    </answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Du kan se processen her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 3 3.mp4' type='video/mp4'>
+    </video>
+    <p class="t">
+    Og så svaret her:
+    _($\frac{10x}{32} + \frac{3 Cos(2x)*Sin(2x)}{32} + \frac{(2+Cos(2x)^2)*Sin(2x)}{48} + \frac{3*Sin(2x)}{16}_)
+    </p>
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 3 4.mp4' type='video/mp4'>
+    </video>
+    </answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 3 5.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 6#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 3 6.mp4' type='video/mp4'>
+    </video>
+    </answer-box>
+    <answer-box t="Answer 7#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 3 7.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 8#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 3 8 .mp4' type='video/mp4'>
+    </video>
+    </answer-box>
+    <answer-box t="Answer 9#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 3 9.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <q-stion 1="2" 2="1" 3="5">
+    Løs følgende integraler:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _($\sqrt{x^5-x^6}_)</li>
+            <li><b> 2</b>: _($\frac{(x+7)^5}{3x^2-9x+2}_)</li>
+            <li><b> 3</b>: _($\frac{x+1}{\sqrt{x}+\sqrt[3](x)}_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    I dem her fortæller jeg dig ikke hvilken strategi du skal bruge, og flere af dem er ret
+    lange og involverede. 
+    </p>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 4 1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 4 2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 4 3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box> -->
+
+
+
+
+
+
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Regn integralerne til de følgende to funktioner:
+    _($\begin{eqnarray}
+    && \textbf{1:} \, \, \, \, & Cos(x)*\sqrt{7+11*Sin(x)} \\ \\
+    && \textbf{2:} \, \, \, \, & \sqrt{e^{8x}-9} 
+    \end{eqnarray}_)
+    Her er du nødt til at være lidt kreativ!
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 2 6.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 2 7.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+
+
+
+
+    <!-- <q-stion 1="2" 2="1" 3="5">
+    Vi bruger langt hyppigst det her nye substitutions-trick på at lave
+    det trick jeg viste som eksempel: _(1-x^2_) der bliver til _(1-cos(u)^2_)
+    der så bliver til _(sin(u)^2_). Det kaldes, meget logisk, for en 
+    <i>trigonometrisk substitution</i>. Prøv at brug det til at løse de
+    følgende integraler: 
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(\frac{1}{\sqrt{1-x^2}}_)</li>
+            <li><b> 2</b>: _(x*\sqrt{1-x^2}_)</li>
+            <li><b> 3</b>: _(Sin(Arctan(x))_)</li>
+            <li><b> 4</b>: _(\frac{1}{\sqrt{3-5x^2}}_)</li>
+        </ul>
+    </div>
+    <br><br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\trigSub1 1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\trigSub2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\trigSub1 3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\trigSub1 4.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box> -->
+
+    <!--  -->
+<!-- 
+    <q-stion 1="2" 2="1" 3="5">
+    At substituere _(x=Sin(u)_) hjælper os med _(\sqrt{1-x^2}_), men hvad med 
+    noget som _(\sqrt{x^2-1}_), eller _(\sqrt{1+x^2}_)? Her kan vi heldigvis bruge
+    et meget lignende trick, ved at substituere henholdsvis _(x=1/Cos(u)_) og _(x=Tan(u)_).
+    Fordi det ret ofte bliver brugt når man integrer (og i visse andre kontekster), så kalder vi 
+    _(1/Cos(x)_) for _(Sec(x)_), _(1/Sin(x)_) for _(Csc(x)_), og _(1/Tan(x)_) for 
+    _(Cot(x)_). Så behøver vi f.eks. ikke skrive at hældningen af _(Tan(x)_) er 
+    _(1/Cos(x)^2_), men bare _(Sec(x)^2_). Vi kan nu også meget nemt ud fra
+    _(Cos(x)^2+Sin(x)^2 = 1_) se at:
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:disc;">
+            <li>_(1+Tan(x)^2 = Sec(x)^2_)</li>
+            <li>_(1+Cot(x)^2 = Csc(x)^2_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Som en lille note, så er det nok relativt vigtigt at vi kan integrere 
+    _(Sec(x)_) og _(Csc(x)_), siden vi nok kommer til at substituere dem en del. 
+    Der <i>findes</i> integraler til disse to funktioner, men de er lidt svære at udlede
+    selv, og det er lidt bare nogen man er kommet frem til med held: 
+    _($\int Sec(x) = Ln(Sec(x)+Tan(x)) _)
+    _($\int Csc(x) = -Ln(Csc(x)+Cot(x)) _)
+    Du kan selv tjekke at det her er sandt, men faktisk at komme frem til
+    f.eks. _(Ln(Sec(x)+Tan(x))_) giver ikke super logisk mening: Det er lidt
+    bare held at man fandt den. De her to skal du altså bare huske. 
+    </p>
+    <p class="t">
+    Nu da vi allerede er i gang, så kan jeg ligeså godt opfriske dig på nogle
+    andre egenskaber af _(Sin_) og _(Cos_) der også ofte er vigtige når man løser integraler:
+    </p>
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:disc;">
+            <li>_(Sin(2x)=2 Sin(x) Cos(x)_)</li>
+            <li>_(Cos(2x)=Cos(x)^2-Sin(x)^2=1-2 Sin(x)^2=2 Cos(x)^2 - 1_)</li>
+            <li>_(Sin(x/2)=(1/\sqrt{2})*\sqrt{1-Cos(x)}_)</li>
+            <li>_(Cos(x/2)=(1/\sqrt{2})*\sqrt{1+Cos(x)}_)</li>
+        </ul>
+    </div>
+    <p class="t">
+    Anyways, nok forklaring, tid til nogle opgaver: 
+    </p>
+    <div style="text-align:center; margin-top:10px;">
+        <ul style="display: inline-block; text-align: left; padding-left:0%; list-style:none;">
+            <li><b> 1</b>: _(\frac{1}{\sqrt{1+x^2}}_)</li>
+            <li><b> 2</b>: _(\frac{1}{\sqrt{x^2-1}}_)</li>
+            <li><b> 3</b>: _(x*\sqrt{1+x^2}_)</li>
+            <li><b> 4</b>: _(\frac{1}{\sqrt{5x^2 + 2x + 6}} _)</li>
+            <li><b> 5</b>: _(\frac{x}{\sqrt{5x^2+2}*\sqrt{3x^2+7} } _)</li>
+            <li><b> 6</b>: _(Cos(x)*\sqrt{7+11*Sin(x)}_)</li>
+            <li><b> 7</b>: _(\sqrt{e^{8x}-9}_)</li>
+        </ul>
+    </div>
+    <br></q-stion>
+    <answer-box t="Answer 1#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 2 1.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 2#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 2 2.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 3#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 2 3.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 4#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 2 4.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 5#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 2 5.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 6#" tabColour="rgb(175,128,161)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 2 6.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+    <answer-box t="Answer 7#" tabColour="rgb(171,96,147)">
+    Du kan se svaret her:
+    <video class='picB' controls>
+        <source src='../../../Assets/Chapter4\DerivativesAndIntegrals\Integrals\Opgave 2 7.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box> -->
+
+    <!--  -->
+
+   
+
+

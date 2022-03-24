@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+
+    <h3>En helt ny måde at se på koniske sektioner</h3>
+    <p class="t">
+    Her lige neden under er der en 3D interaktiv skitse der viser skæringen 
+    mellem en kegle og en simpel flade.
+    Du kan ændre på positionen og hældningen af fladen ved at rykke rundt 
+    med _(A_) og _(B_). Er der noget bestemt
+    du opdager?
+    </p> 
+
+    <p class="cent">
+        <a href="https://www.geogebra.org/m/tcts9uds" target="_blank">Link til geogebra simulation der ikke virkede på denne side!</a> 
+    </p>
+
+    <p class="t">
+    Det ser ud til, at skæringen enten tager formen af en cirkel, 
+    en ellipse, en parabola, eller en hyperbola.
+    Størrelsen varierer baseret på positionen af _(A_), men formen ser ud til at være
+    helt bestemt af fladens hældning. En hældning på _(0_) resulterer (obviously) i en cirkel. 
+    En hældning større end _(0_) men under keglen giver en ellipse, som så bliver mere og
+    mere udstrækt indtil den endelig transformeres til en parabola. Den er <i>kun</i> en parabola
+    når de to hældninger er <i>identiske</i>, og vi får en hyperbola hvis hældningen bliver større.
+    </p>
+    <p class="t">
+    Vi står altså lige nu med en helt tredje måde at se på ellipser, parabler og hyperbolaer: 
+    skæringen mellem en kegle og en flade. I nogle tilfælde kan det være praktisk at se på 
+    de her todimensionelle former som disse 3D udskæringer. 
+    Fabrikker og lignende kan bruge det til nemt at udskære ellipser, parabler, og hyperbolaer. 
+    Ingeniører skal 
+    også vide det når de designer i 3D programmer. Vi skal nok bevise
+    at det er sandt snart, men vi har ikke helt værktøjerne lige nu.
+    </p>
+
+    <p class="t">
+    Der findes også en helt <i>fjerde</i> måde man kan se på ellipser, parabler, og hyperbolaer. 
+    Deres form var bestemt af hældningen på planet da vi så dem som en 3D-udskæring. 
+    Meget lignende kan den også bestemmes af et tal kaldt <i>excentriciteten</i>. 
+    </p>
+    <p class="t">
+    Her ses formerne som en samling af punkter _(P_), hvor afstanden fra _(P_) til
+    et fokuspunkt _(F_), hele tiden er lgi afstanden
+    fra _(P_) til en eller anden linje _(d_) <i>ganget</i> med _(e_). 
+    Med andre ord: 
+    _($PF = e*\text{Afstand til linjen } d_)
+    Parablen definerede vi på meget samme måde, her var _(e_) bare lig _(1_). 
+    Du kan lege rundt med det i følgende simulation: 
+    </p>
+
+    <p class="cent">
+        <a href="https://www.geogebra.org/m/wd7xq7m2" target="_blank">Endnu et link til geogebra simulation der ikke virkede på denne side!</a> 
+    </p>
+
+    <q-stion 1="8" 2="1">
+    Rent intuitivt og baseret på simulationen: 
+    På hvilke _(e_) får vi henholdsvis ellipser, parabler og hyperbolaer? 
+    Hvad med cirkler? Giver de nogen mening med denne definition? 
+    <p class="t">
+    Du behøver ikke bekymre dig alt for meget om cirkel-tilfældet.
+    Det bliver lidt teoretisk og filosofisk. 
+    </p>
+    <br></q-stion>
+    <answer-box>    
+    Du kan se mit svar (og lidt mere end det også!) i følgende video:
+    <video class='SpicB' style="width:95%;" controls>
+        <source src='../../../Assets/Chapter2\Section4\Conics\EccentricityExplanation.mp4' type='video/mp4'>
+    </video>
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <q-stion 1="8" 2="2">
+    <p class="t">I sidste opgave så vi hvorfor denne excentricitets-definition 
+    gav intuitiv mening. Lad os nu bevise at den matcher
+    med de andre definitioner rent matematisk.</p>
+    <p class="t">
+    Vi ved det gælder ved _(e=1_). Tilfældet med _(e=0_) er ret tricky eftersom
+    afstanden til _(d_) stiger til _(\infty_) mens _(e_) nærmer sig _(0_), så den ignorerer vi. 
+    Målet er nu at bevise at: 
+    </p>
+    <ul style="list-style:disc; margin-left:5%;">
+        <li>En _(e_) større end _(0_) og mindre end _(1_) giver os en ellipse </li>
+        <li>En _(e_) større end _(1_) giver os en hyperbola </li>
+    </ul>
+    <p class="t">
+    Du skal altså gå ud fra:
+    _($PF = e*\text{Afstand til linjen } d_)
+    Og omskrive til noget 
+    der ca. matcher med den algebraiske
+    definition på henholdsvis en ellipse og en hyperbola. 
+    </p>
+    <p class="t">
+    Svaret på begge er givet i én opgave, da man får ét resultat hvor man kan 
+    ændre på _(e_) og bevise begge. 
+    </p>
+    <p class="t">
+    <i>Hint</i>: Du får nok brug for at anvende det trick vi brugte til at 
+    løse andengradsligninger, hvor vi kunne omskrive noget i formen 
+    _(Ax^2 + Bx + C_) til formen _((x-A)^2+B_)
+    </p>
+    <br></q-stion>
+    <answer-box>
+     Hvis fokuspunktet er _((a,b)_) og linjen _(y=c_), får vi:
+     _($\begin{align}
+     \sqrt{(x-a)^2+(y-b)^2}&=e*\sqrt{(y-c)^2} &\to \\ \\
+    (x-a)^2+(y-b)^2&=e^2*(y-c)^2 &\to \\ \\
+    (x-a)^2+y^2-2by+b^2-e^2y^2+2e^2cy&=e^2c^2 &\to \\ \\
+    (x-a)^2+(1-e^2)y^2+(2e^2c-2b)y&=e^2c^2-b^2 &\to \\ \\
+    \frac{(x-a)^2}{1-e^2}+y^2+\frac{2e^2c-2b}{1-e^2}y&=\frac{e^2c^2-b^2}{1-e^2} &\to \\ \\
+    \frac{(x-a)^2}{1-e^2} + \left(y+\frac{e^2c-b}{1-e^2}\right)^2 &= \frac{e^2c^2-b^2}{1-e^2}+\left(\frac{e^2c-b}{1-e^2}\right)^2
+     \end{align}_)
+    Mellem den næstsidste og sidste linje anvendte vi "tricket", for at samle
+    _(y^2_) og _(y_) så det passede til en ellipses/hyperbolas form. Noter
+    at _(1-e^2_) er positiv når _(e \lt 1_). I det tilfælde passer vores
+    ligning til formen _(Ax^2 + By^2 = C_), hvilke er en ellipse. Hvis 
+    _(e \gt 1_) så er _(1-e^2_) negativ, og vores ligning tager formen
+    _(By^2 - Ax^2 = C_) hvilket er en hyperbola. Bum!   
+    <br><br></answer-box>
+
+    <!--  -->
+
+    <p class="t">
+    Den egenskab vi lige beviste her hedder <i>directrix/eccentricity</i> egenskaben. 
+    Rent matematisk set er det en meget elegant måde at beskrive alle de her tre/fire figurer på èn gang. 
+    Cirkler, ellipser, parabler og hyperbolaer siger vi alle er "<i>conic sections</i>", og 
+    _($\sqrt{(x-a)^2+(y-b)^2}=e*\sqrt{(y-c)^2}_) 
+    ... er familien af alle koniske sektioner.
+    </p>
+    <p class="t">
+    Tænk lige over det: denne ene ret simple ligning kan beskrive både alle 
+    cirkler, ellipser, parabler og hyperbolaer!
+    I teoretisk matematikarbejde er det super praktisk at have det så kompakt og 
+    sammenhængende. Det teoretiske
+    arbejde kan så resultere i nye andre teorier der muligvis har 
+    praktiske anvendelser i virkeligheden. 
+    </p>
+
+    <p class="t">
+    En rigtig nice direkte anvendelse af directrix/eccentricity egenskaber 
+    kommer fra astronomi i fysik.
+    Noget man logisk nok var virkelig interesseret i at vide, var formen 
+    af planternes kredsløb
+    rundt om solen. Var det eksklusivt cirkler, eller mere generelt ellipser? 
+    </p>
+    <p class="t">
+    En astronom kaldt Kepler arbejdede med det her. Han opsatte et 
+    polært koordinatsystem centeret på solen, 
+    og ved hjælp af en helt masse smarte argumenter kom han frem 
+    til følgende formel for plantens position:
+    _($r=\frac{ \frac{h^2}{GM} }{ 1 + \left(\frac{Bh^2}{GM} \right)*Cos(\theta) } _)
+    Du behøver ikke rigtig forstå præcist hvad det her betyder. 
+    _(h_) er kort for _(r^2*w_) hvor _(w(t)_) er hvor hurtigt vinklen ændre sig ved tidspunktet _(t_). 
+    Kepler har vist at _(r^2*w(t)_) er konstant, og har derfor bare skrevet det som _(h_). _(G_)
+    er den universelle tyngdekraftskonstant ("universel" ligesom lysets hastighed), _(M_)
+    er solens masse, og _(B_) er en konstant der bare er en samling af en masse andre
+    konstanter og tal fra tidligere arbejde. 
+    </p>
+    <p class="t">
+    En generel konisk sektion med fokus på solen skal følge: 
+    _($\frac{\text{afstand til solen}}{\text{afstand til en eller anden linje}}=e_)
+    Afstand til solen er i det polære koordinatsystem bare _(r_). Afstand til
+    en eller anden linje kan vi skrive som _(d-x=d-r*Cos(\theta)_), hvor _(d_)
+    er linjens position. Det skal teknisk set være gjort positivt via potens og kvadratrod,
+    men jeg ignorere det lige for simplicitetens skyld. 
+    _($\frac{r}{d-r*Cos(\theta)}=e_)
+    Man kan nu isolere _(r_) og få:
+    _($r=\frac{ed}{1+e*Cos(\theta)}_)
+    Det her er altså den generelle form alle koniske sektioner rundt omkring solen skal følge. 
+    Fantastisk nok passer det til den tidligere formel:
+    _($r=\frac{ \frac{h^2}{GM} }{ 1 + \frac{Bh^2}{GM}*Cos(\theta) } \qquad \to r=\frac{ (\frac{Bh^2}{GM})*\frac{1}{B}}{ 1 + (\frac{Bh^2}{GM})*Cos(\theta) }_)
+    _(Bh^2/GM_) er altså excentriciteten, og _(1/B_) er _(d_). 
+    _(h_) var som sagt lig _(r^2*w(t)_), så:
+    _($e=\frac{B}{GM}*(r^2*w(t))_)
+    _(B/GM_) er primært bare en samling af en masse konstanter og 
+    solens masse _(M_), men _(r^2*w(t)_) er unikt for hver planet. 
+    Kepler havde som sagt bevist at _(r^2*w(t)_) var konstant: 
+    Hvis radiusen bliver mindre, så bliver
+    hastigheden større og vice versa. Man kan yderligere bevise, at 
+    konstanten _(r^2*w(t)_) afhænger af planetens samlede mængde energi. Så
+    formlen fortæller os at en planets samlede mængde energi rundt omkring solens
+    bestemmer formen på dens kredsløb. En kæmpe tung planet der flyver med stor hastighed og stor
+    radius bærer også rundt på en massiv mængde energi via dens bevægelse. 
+    Det resulterer
+    ifølge formlen i en stor excentricitet, hvilke betyder at planeten 
+    flyver i en meget udstrakt ellipse omkring solen. 
+    Et modsat eksempel kunne være en lille planet der er tæt på solen og har lille hastighed. 
+    Dens excentricitet nærmer sig _(0_), så kredsløbet ligner en cirkel. 
+    En planet (dog primært en asteroide)
+    kan til tider opnå en så massiv energi (primært på grund af hastighed) at 
+    excentriciteten bliver <i>større</i> end _(1_), hvilke skaber
+    en hyperbola. Der her svarer til at asteroiden flyver tæt op ad solen, skifter retning, og 
+    så flyver væk igen. Den laver altså en såkaldt slingshot-manøvre.  
+    </p>
+
+    
+    <!-- <p class="t">
+    EKSTREMT UNØDVENDIGT DANDELIN LORT.
+
+    Først, en ellipse. Vi skal på en eller anden måde vise at <i>der findes</i> to punkter
+    _(F_1,F_2_) hvor at distancesummen til et hvilket som helst punkt _(X_) på skæringen er 
+    identisk. Jeg skal nok også få forklaret dig hvad præcist en "kegle" er. En kegle 
+    kan defineres som _(\sqrt{x^2+y^2}=z_). Intuitivt er det altså alle cirklerne med en radius på _(z_). 
+    Vi <i>kunne</i> prøve at rent matematisk/algebraisk finde denne 3D skæring mellem planet og keglen, men det ville
+    blive meget stort og rodet meget hurtigt. Vores små hjerner laver nemt fejl og kan ikke helt håndtere
+    den komplexitet, så vi skal nok i stedet prøve at lave det om til et <i>geometrisk</i> problem.  
+    </p>
+    <p class="t">
+    Hvis der findes to punkter _(F_1,F_2_) med den her magiske egenskab, så må der nok også være to punkter
+    på vores udskæring der har <i>et eller andet specielt</i> omkring dem. To punkter
+    der har en eller anden geometrisk egenskab nogle andre punkter ikke har?
+    ET BILLEDE HER HVOR DU HAR VIST DEN DER DANDELIN SPHERE.
+    Der <i>er</i> to punkter der har en speciel egenskab, men de kræver også at vi gør noget
+    der i starten virker lidt tilfældigt. Jeg har placeret to kugler der lige præcis er tangent med 
+    både planet og keglen alle de steder de rører. Siden planet hælder, så kommer
+    den ene kugle til at skære længere ovre mod venstre, og den anden kugle til at skære længere 
+    ovre mod højre. Det her passer cirka til hvordan fokuspunkterne på en cirkel er placeret,
+    så det er nok ikke et helt elendigt gæt. Yderligt så lader det os bruge keglens egenskaber
+    på en naturlig måde: begge cirkler danner to flade plader der skære keglen som <i>cirkler</i>.
+    Hvis keglen er en vigtig del af den her situation, så skal vi også <i>bruge</i> dens
+    definerende karaktestiker på en eller anden måde. Alt i alt så må man alligevel sige
+    at det her er blot et af mange eksempler på at matematike på ingen måde altid er en logisk proces.
+    Nogle gange skal vi bare springe ud og gøre et eller andet dumt vi tror der måske virker.
+    </p>
+    <p class="t">
+    Alright lad os lige tegne situationen op med lidt ekstra detalje:
+    BILLEDE HER MED MERE DETALJE.
+    Vores hypotese er at de to punkter hvor kuglerne skære planet også er to fokuspunkter soms
+    afstands-sum til _(X_) er konstant. Det er ummidelbart lidt svært at vise, så lad os bare
+    først lede efter <i>noget som helst</i> der er konstant og involvere _(X_). Her kan
+    de to cirkler _(c_1,c_2_) hjælpe: Tydeligvis så er _(C_1X+C_2X_) konstant. Både
+    _(C_1_), _(F_1_) og _(X_) <i>ligger</i> på den samme kugle. Ikke bare det; _(\Seg{C_1X}_) og 
+    _(\Seg{F_1X}_) er begge <i>tangente</i> på kuglen. Hvis vi kigger på det lidt simplere i 2D:
+    DET DER MED TANGENTHED OG HVOR LANGT DER ER
+    Haha! _(C_1X_) er faktisk ligmed _(F_1X_) og samme gælder _(C_2X_) og _(F_2X_). Så
+    _(F_1X+F_2X_) er konstant. Bum!
+    </p> -->
+
+    
+
+
+

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.3" orientation="isometric" renderorder="right-down" width="64" height="64" tilewidth="128" tileheight="64" infinite="0" nextlayerid="47" nextobjectid="1">
+ <tileset firstgid="1" source="../M/Færdige billeder/SpecialBlocks.tsx"/>
+ <tileset firstgid="52" source="../M/Numbers.tsx"/>
+ <tileset firstgid="72" source="../M/Standard.tsx"/>
+ <layer id="13" name="sky background" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzFlFFyJDEIQ32hvf/19jfFCumB3VmqpjJpG9AD9Zyziz/N5+e5ut+d15pdnrpXv6u6L6JjdrrVOWFS99KcqbZpEBb3jJy58/q86ko6tjHVpvKoL7q6TkequQ2653q/0+p0qjPXbzLPTZCdOZYXz199KteGvXt+4+/p3dtZnvNvb8I+0V17TLkmO53OMvHTWtuzFz4mPZT+yunYU291h3B3uU7zdL+pvupB6pL6xGuELf0/Zb/l7zST3Sf25O9ON9058VgNwp6Y1V1SX+WqnIne9GxSy90jvqbsZF9Tz0584e4mr3ezcN8pO2UkZ1+yO0+kHFeLfo6ppTQk1qmeI/JIzW1f1yd5dMqWdrXh+hnkTqc71aBeS3lJ42RG7vyIO467u+e+E7037B3TSz+m3t1sqebtjhXzxKvpTscw3VfSuvFLYif5hJ3uPHHd1iAzT+wnPE977/o57apX0r1l38y/Y3ccpzxL7K5/8sQrryRv0JlVdpdP+AnHRHfa2ZSd+ojsP80i8Xa66TwSu3ueNHT+IJpJ3+4eZXdapv6b9iMc/5N9O5c0py4Sxxfsyae37GT/qpdi3fKq2onZ1SV3yNw7fvX/hG/iYdXH9d4yu51O2FV/xahqk7nc8JF9K31H3HX7Sf233Bt2osM9V9GxH/Fc+WvKscmhNV+wOx/U74TD3enOSF3qMcKeeLv6X+y5y9nWSuw3mreM23q01xH3Kf+0LtH6ek5b//zUoe45jVS/mqnj38ymy0n6lZZuJt33iSbCPp2v60V20IXzRNLp8jquCW/NcblJS8fu5jZlJ3yEn/SnWhI/YZ/2n+rf+oH4JfFv90PPb/pQj6haNJKmpJ+wprwtN7lH+VXd9P9mn6mGOq86X7HXuPEn1fXVvp0np/xdv43+3/4olim/q3kzg9TnS/9M+CvvjebbXW7Zq/5NEA2drqR3wjO5qzRv2ZNvnS6lYcNE7iUdmyD8X+3vxuev+W/ZJ56Yzu+EWq9iwlfz3N/6bNOny38ZE01fvw+1j6pVz28jaVeaVO7U19u9v/QBYUpnL7zgetRane5NqBqk7ma/7j0idb/wvgpSP/FsuOk7/yU7Cfe78OI9mLwrvx2UXeXQ35n/4XkSEwaXr37LUr2u/l9TPdlE
+  </data>
+ </layer>
+ <layer id="43" name="7" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer id="42" name="6" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer id="41" name="5" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer id="40" name="4" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20MH6AAAAAAAAAAAAAAAAAAAACAtwFAAAAB
+  </data>
+ </layer>
+ <layer id="39" name="3" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt1sEJwCAQRUHbkxRi/x0EDwFZcsplIX8G9u5DFxwDAAAAAAD4anYfoNEa+vXnSu+vrjJJVpmkd/Hc9yyT4K397879rv0Jdu+56/pz2jf9+usk9W+p/zwAAAAAAIAuN2UdFj4=
+  </data>
+ </layer>
+ <layer id="38" name="2" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt1kEKgzAQQNFcT3oQ8V49aBEbCGNscSGByXswYHb5UYKlAAAAAADAfa/vzKh2v4fuYhz9h9n7l6G7GGstR39vst+La5go+3ex98X3P5PYP5Pa/Ks/07ls5Xy/tXrrLO27rZzPoPVvnUE8g9Zy8ZzN7P1V738HAAAAAAAAeNYHecgWxg==
+  </data>
+ </layer>
+ <layer id="37" name="1" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt1EEKgDAMBMB8z5f0XyK+UwoeoqDQgxbaGdh7NoFEAAAAAADQYkmZTe699Rykg/vdtxh/B8tDqtG7V7VrSdH/2n8/EzHmX7z3L33H+d3b/WfQ0n9NGcXb/wcAAAAAAAAA4FsHvdgXvw==
+  </data>
+ </layer>
+ <layer id="36" name="0" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt0sEJgDAQBEArEiwj2KWIdUrARwii+LmANwP7CPnswk0TAAAAAAC8K6MLBCs3yaTuXZrsY+uE+7r/b/fR78/G/T/vr+8tulSguv9osnb/2e6hl30/+cxXssq8HQAAAAAAAGCUEwtTDno=
+  </data>
+ </layer>
+ <layer id="44" name="-1" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt0DERAEAIxED8oAT/hl7A9xzFroJMqgAAAAAAAAB+kw4AojodcIAHAAAAAAAAAGx76PQAoA==
+  </data>
+ </layer>
+ <layer id="45" name="-2" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJztz7ENAEAIAzH2nwMx5zdf0qfAlq5PqgAAAAAAYDc/bun0gDD/AQAAAAAAAAAASHnlaAM5
+  </data>
+ </layer>
+ <layer id="46" name="RegionToTakePicture" width="64" height="64">
+  <data encoding="base64" compression="zlib">
+   eJzt1TEBAAAIw7AJwr8+JHByLFHQrwkAAAAAAECX+Q4AgEL+CwAAAAAAAAC3BVO0AFk=
+  </data>
+ </layer>
+</map>
